@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+  
+    <ul>
+    <% products.map((product) =>{%>
+        <li>
+            <a href = "/item/<%=product.item_id%>"><%=product.name%></a>
+            <form action = "/delete/<%=product.item_id%>">
+                <button type = "submit">Delete</button>
+            </form>
+        </li>
+    <%});%>
+    </ul>
+    <h3>Add an item to this category</h3>
+    <form action = "/add/<%=id%>" method = "POST">
+        <label for = "name">Name</label>
+        <input type = "text" id = "name" name = "name">
+        <label for = "price">Price</label>
+        <input type = "number" id = "price" name = "price" step = "0.01">
+        <label for = "qty">Quantity</label>
+        <input type = "number" id = "qty" name = "qty" step = "1">
+        <button type = "submit">Submit</button>
+    </form>
+    <a href = "/">Return to categories</a>
+
+    
+</body>
+</html>
