@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+</head>
+<body>
+    <h1>Choose the category of products!</h1>
+    <form action = '/search/'>
+        <select name = "category" id = "category">
+        <% for (let x = 0; x<categories.length; x++) {%>
+            <option value = "<%= categories[x].id %>" > <%= categories[x].name %></option> 
+        <%}%>
+    </select>
+    <button type = "submit">submit</button>
+    </form>
+</body>
+</html>
